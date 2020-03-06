@@ -1,4 +1,4 @@
-package org.lparce.app;
+package org.lparce.app.rest.controller;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
