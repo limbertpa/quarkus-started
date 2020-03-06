@@ -47,3 +47,5 @@ If you want to learn more about building native executables, please consult http
 `docker build -f src/main/docker/Dockerfile.native -t quarkus-quickstart/getting-started .`
 
 `docker run -i --rm -p 8080:8080 quarkus-quickstart/getting-started`
+
+` http://localhost:8080/swagger-ui/`
