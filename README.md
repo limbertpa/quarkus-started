@@ -40,10 +40,10 @@ You can then execute your binary: `./target/quarkus-started-1.0-SNAPSHOT-runner`
 If you want to learn more about building native executables, please consult https://quarkus.io/guides/building-native-image-guide .
 
 
-# ./mvnw package -Pnative -Dquarkus.native.container-build=true
+`./mvnw package -Pnative -Dquarkus.native.container-build=true`
 
-# ./mvnw package -Pnative -Dquarkus.native.container-runtime=docker
+`./mvnw package -Pnative -Dquarkus.native.container-runtime=docker`
 
-# docker build -f src/main/docker/Dockerfile.native -t quarkus-quickstart/getting-started .
+`docker build -f src/main/docker/Dockerfile.native -t quarkus-quickstart/getting-started .`
 
-# docker run -i --rm -p 8080:8080 quarkus-quickstart/getting-started
+`docker run -i --rm -p 8080:8080 quarkus-quickstart/getting-started`
