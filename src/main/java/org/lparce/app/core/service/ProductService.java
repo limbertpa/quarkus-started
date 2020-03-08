@@ -25,7 +25,4 @@ public class ProductService {
         Product.delete("id", id);
     }
 
-    public List<Product> findPriceGte(BigDecimal price) {
-        return Product.priceGte(price);
-    }
 }
