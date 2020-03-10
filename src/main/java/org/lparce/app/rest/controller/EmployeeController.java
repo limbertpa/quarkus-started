@@ -2,6 +2,7 @@ package org.lparce.app.rest.controller;
 
 
 import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
+import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 import org.lparce.app.core.entity.Employee;
 import org.lparce.app.core.service.EmployeeRepository;
 import org.slf4j.Logger;
@@ -16,6 +17,7 @@ import java.util.Set;
 @Path("/employees")
 @Produces({MediaType.APPLICATION_JSON})
 @Consumes(MediaType.APPLICATION_JSON)
+@Tag(name = "Employee")
 public class EmployeeController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(EmployeeController.class);

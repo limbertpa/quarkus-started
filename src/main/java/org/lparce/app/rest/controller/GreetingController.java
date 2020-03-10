@@ -1,6 +1,7 @@
 package org.lparce.app.rest.controller;
 
 import org.eclipse.microprofile.config.inject.ConfigProperty;
+import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -9,6 +10,7 @@ import javax.ws.rs.core.MediaType;
 import java.util.Optional;
 
 @Path("/greeting")
+@Tag(name = "Greeting")
 public class GreetingController {
 
     @ConfigProperty(name = "greeting.message")

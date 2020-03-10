@@ -2,6 +2,7 @@ package org.lparce.app.rest.controller;
 
 
 import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
+import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 import org.lparce.app.core.entity.Product;
 import org.lparce.app.core.service.ProductService;
 
@@ -17,6 +18,7 @@ import java.util.List;
 @ApplicationScoped
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
+@Tag(name = "Product")
 public class ProductController {
     @Inject
     ProductService productService;
