@@ -1,6 +1,9 @@
 package org.lparce.app.core.entity;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.Cacheable;
 import javax.persistence.Column;
@@ -9,6 +12,9 @@ import java.math.BigDecimal;
 
 @Entity
 @Cacheable
+@Getter
+@Setter
+@ToString
 public class Product extends PanacheEntity {
 
     @Column(length = 40, unique = true)
