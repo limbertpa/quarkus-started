@@ -1,5 +1,6 @@
 package org.lparce.app.rest.controller;
 
+import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
 import org.lparce.app.core.entity.User;
 import org.lparce.app.core.service.UserService;
 
@@ -18,7 +19,7 @@ public class UserController {
     UserService service;
 
     @POST
-    public Map<String, String> createUser(User user) {
+    public Map<String, String> createUser(@RequestBody User user) {
         this.service.createUser(user.getName());
         return Collections.singletonMap("message", "OK");
     }

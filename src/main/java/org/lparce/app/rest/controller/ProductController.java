@@ -1,6 +1,7 @@
 package org.lparce.app.rest.controller;
 
 
+import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
 import org.lparce.app.core.entity.Product;
 import org.lparce.app.core.service.ProductService;
 
@@ -27,7 +28,7 @@ public class ProductController {
 
     @POST
     @Transactional
-    public Response add (Product product){
+    public Response add (@RequestBody Product product){
         if (product.id != null) {
             throw new WebApplicationException("Id was invalidly set on request.", 422);
         }

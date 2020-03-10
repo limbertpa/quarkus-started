@@ -1,6 +1,7 @@
 package org.lparce.app.rest.controller;
 
 
+import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
 import org.lparce.app.core.entity.Employee;
 import org.lparce.app.core.service.EmployeeRepository;
 import org.slf4j.Logger;
@@ -23,7 +24,7 @@ public class EmployeeController {
     EmployeeRepository repository;
 
     @POST
-    public Employee add(@Valid Employee employee) {
+    public Employee add(@Valid @RequestBody Employee employee) {
         LOGGER.info("Employee add: {}", employee);
         return repository.add(employee);
     }
