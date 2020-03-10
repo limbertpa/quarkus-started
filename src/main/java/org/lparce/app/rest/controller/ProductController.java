@@ -43,4 +43,10 @@ public class ProductController {
     public void delete(@PathParam("id") Long id){
         productService.delete(id);
     }
+
+    @GET
+    @Path("/search-name")
+    public List<Product> searchByName(@QueryParam("name") String name){
+        return productService.findByName(name);
+    }
 }

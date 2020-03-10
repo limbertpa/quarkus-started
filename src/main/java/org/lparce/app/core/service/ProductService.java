@@ -6,6 +6,7 @@ import org.lparce.app.core.repository.ProductRepository;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 @ApplicationScoped
@@ -27,6 +28,11 @@ public class ProductService {
     @Transactional
     public void delete(Long id) {
         productRepository.delete("id", id);
+    }
+
+    public List<Product> findByName(String name){
+        //productRepository.find(name,na)
+        return new ArrayList<>();
     }
 
 }
