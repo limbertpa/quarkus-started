@@ -1,27 +1,32 @@
 package org.lparce.app.core.service;
 
 import org.lparce.app.core.entity.Product;
+import org.lparce.app.core.repository.ProductRepository;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.transaction.Transactional;
 import java.util.List;
 
 @ApplicationScoped
 public class ProductService {
 
+    @Inject
+    ProductRepository productRepository;
+
     @Transactional
     public Product addProduct(Product product) {
-        Product.persist(product);
+        productRepository.persist(product);
         return product;
     }
 
     public List<Product> list() {
-        return Product.listAll();
+        return productRepository.listAll();
     }
 
     @Transactional
     public void delete(Long id) {
-        Product.delete("id", id);
+        productRepository.delete("id", id);
     }
 
 }
