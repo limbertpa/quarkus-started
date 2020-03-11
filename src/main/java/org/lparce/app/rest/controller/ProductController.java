@@ -9,6 +9,7 @@ import org.lparce.app.core.service.ProductService;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
+import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -30,7 +31,7 @@ public class ProductController {
 
     @POST
     @Transactional
-    public Response add (@RequestBody Product product){
+    public Response add (@RequestBody @Valid Product product){
         if (product.id != null) {
             throw new WebApplicationException("Id was invalidly set on request.", 422);
         }
